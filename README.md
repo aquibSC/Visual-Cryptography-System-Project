@@ -1,95 +1,135 @@
-# Visual-Cryptography-System
-Python-based Visual Cryptography System for secure image authentication, secret image sharing, and digital watermarking using Pillow (PIL) and pixel-level image encryption.
+# 🔐 Visual Cryptography System
 
-<h1 align="center">Visual Cryptography System for Secure Image Authentication</h1>
+A Python-based Visual Cryptography System that securely converts an image into two encrypted visual shares. The original image can be reconstructed only by combining both shares.
 
-<p align="center"><b>Python • Pillow (PIL) • Cryptography • Information Security • Image Processing</b></p>
+## 📌 About the Project
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" />
-  <img src="https://img.shields.io/badge/Cryptography-Visual%20Cryptography-green" />
-  <img src="https://img.shields.io/badge/Image%20Processing-Pillow-orange" />
-  <img src="https://img.shields.io/badge/Status-Security%20Project-purple" />
-</p>
+Visual Cryptography is a cryptographic technique that allows a secret image to be divided into multiple shares.
+
+In this project, the original image is converted into two pixel-based encrypted shares. Individually, the shares do not reveal the original image. The original image is reconstructed by manually selecting and combining both shares.
+
+The project includes a graphical user interface built with Python and Tkinter.
 
 ---
 
-## Overview
+## ✨ Features
 
-This project implements a **Visual Cryptography System** that securely encrypts an image into multiple independent shares. The original image becomes visible only when the required shares are combined (superimposed). Individual shares appear as random noise and reveal no meaningful information, making the technique suitable for secure image authentication, confidential image sharing, and digital watermarking applications.
+- 🔐 Image encryption using visual cryptography
+- 🧩 Generation of two encrypted shares
+- 🖼️ Pixel-based encrypted share representation
+- 🔓 Manual reconstruction using Share 1 and Share 2
+- 📂 Select images directly from the file system
+- 💾 Custom save location for encrypted shares
+- 💾 Custom save location for reconstructed images
+- 🖼️ Image previews inside the GUI
+- 📊 Encryption and reconstruction progress indicators
+- 🌙 Dark mode / light mode interface
+- 🖥️ Desktop GUI using Tkinter
+- 📁 Organized project structure
 
-## Problem Statement
+---
 
-Traditional image encryption methods require computational decryption algorithms and secret keys. Visual cryptography enables secure image sharing by dividing a secret image into multiple shares that can be visually reconstructed without exposing the original image through any single share.
+## 🔐 Encryption Process
 
-## Objectives
+The encryption process follows these steps:
 
-* Encrypt images into multiple independent shares.
-* Prevent information leakage from individual shares.
-* Reconstruct the original image through share superimposition.
-* Explore cryptographic techniques for secure image authentication.
-* Demonstrate applications in digital watermarking and confidential image sharing.
+1. Select the original image.
+2. Choose a folder where the encrypted shares should be saved.
+3. Click **Generate Encrypted Shares**.
+4. The system processes the image pixel-by-pixel.
+5. Two encrypted shares are generated.
+6. Share 1 and Share 2 can be stored separately.
+7. Each share can be viewed as a pixel-based encrypted image.
 
-## Key Features
+### Encryption Workflow
 
-* Visual cryptography-based image encryption
-* Pixel-level image processing using Python
-* Multi-share secret image generation
-* Secure image reconstruction
-* Randomized share generation
-* Digital watermarking and authentication concepts
+```text
+Original Image
+      │
+      ▼
+Pixel Processing
+      │
+      ▼
+┌───────────────┐
+│ Visual        │
+│ Cryptography  │
+└───────────────┘
+      │
+      ├──────────────► Share 1
+      │
+      └──────────────► Share 2
+### Encryption Workflow
+Share 1 ──────┐
+              │
+              ▼
+        Share Combination
+              │
+              ▼
+     Reconstructed Image
+              ▲
+              │
+Share 2 ──────┘
+🖥️ Graphical User Interface
 
-## Technologies Used
+The application contains three main sections:
 
-* Python
-* Pillow (PIL)
-* NumPy
-* Image Processing
-* Cryptography Concepts
-* Information Security
+Home Page
 
-## Repository Structure
+The Home Page allows the user to choose between:
 
-Visual-Cryptography-System/
-├── README.md
-├── architecture/
+🔐 Encryption
+🔓 Decryption
+Encryption Page
+
+The Encryption Page provides:
+
+Original image selection
+Image preview
+Custom save location
+Encrypted share generation
+Progress indicator
+Share 1 preview
+Share 2 preview
+Decryption Page
+
+The Decryption Page provides:
+
+Share 1 selection
+Share 2 selection
+Share previews
+Custom output location
+Manual reconstruction
+Reconstruction progress
+Reconstructed image preview
+Visual-Cryptography-System
+│
 ├── algorithms/
-├── encryption/
+│
+├── architecture/
+│
 ├── decryption/
-├── sample-images/
+│   └── reconstruct_image.py
+│
+├── encryption/
+│   └── generate_shares.py
+│
 ├── reports/
-└── requirements.txt
+│
+├── sample-images/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── SECURITY.md
+└── CONTRIBUTING.md
+ Author
 
-## Security Advantages
+MD Aquib Hussain
 
-* Individual shares reveal no useful information.
-* No secret key is required for visual reconstruction.
-* Resistant to single-share compromise.
-* Suitable for secure authentication systems.
+GitHub:
+https://github.com/aquibSC
 
-## Applications
+📄 License
 
-* Secure image authentication
-* Confidential document sharing
-* Digital watermarking
-* Identity verification systems
-* Medical image protection
-* Multi-share secret image distribution
-
-## Future Enhancements
-
-* Support for color images
-* Multi-level visual cryptography
-* QR-code based secret sharing
-* Threshold cryptography (k-out-of-n)
-* Mobile and web deployment
-
-## Author
-
-Nitish Kumar
-
-gmail: nitishcse4@gmail.com 
-
-https://www.github.com/whoisni30
-
-https://www.linkedin.com/in/nitish-kumar-69b32b232/
+This project is licensed under the MIT License.
